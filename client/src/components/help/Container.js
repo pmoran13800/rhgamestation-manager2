@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { translate } from 'react-i18next';
 import reactStringReplace from 'react-string-replace';
-import { recalboxSupport } from '../../api';
+import { rhgamestationSupport } from '../../api';
 import Help from './Help';
 
 class HelpContainer extends Component {
@@ -22,14 +22,14 @@ class HelpContainer extends Component {
     window.location.hash = window.decodeURIComponent(window.location.hash);
 
     if ('#launch-support' === window.location.hash) {
-      this.doRecalboxSupport();
+      this.doRHGamestationSupport();
     }
   }
 
-  doRecalboxSupport = () => {
+  doRHGamestationSupport = () => {
     this.setState({ callingSupport: true });
 
-    recalboxSupport().then(
+    rhgamestationSupport().then(
       result => (
         this.setState({
           callingSupport: false,
@@ -48,21 +48,21 @@ class HelpContainer extends Component {
   render() {
     const { t } = this.props;
     const supportSentence = reactStringReplace(t("Si on vous demande d'envoyer le résultat du script %s, vous pouvez le faire automatiquement ci-dessous."), '%s', (match, i) => (
-      <code key={i}>recalbox-support.sh</code>
+      <code key={i}>rhgamestation-support.sh</code>
     ));
 
     return (
       <Help {...this.state} links={[{
         label: t('Le forum :'),
-        link: t("https://forum.recalbox.com/"),
+        link: t("https://forum.rhgamestation.com/"),
       }, {
         label: t('Le chan IRC :'),
-        link: t("https://kiwiirc.com/client/irc.freenode.net/#recalbox"),
+        link: t("https://kiwiirc.com/client/irc.freenode.net/#rhgamestation"),
       }, {
         label: t('Le wiki :'),
-        link: t("https://github.com/recalbox/recalbox-os/wiki/Home-(FR)"),
+        link: t("https://github.com/rhgamestation/rhgamestation-os/wiki/Home-(FR)"),
       }]}
-      callSupport={this.doRecalboxSupport} supportSentence={supportSentence} />
+      callSupport={this.doRHGamestationSupport} supportSentence={supportSentence} />
     );
   }
 }

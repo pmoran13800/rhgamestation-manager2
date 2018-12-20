@@ -12,7 +12,7 @@ const Security = ({ t, loaded, stickyStyle, stickyContent, ...rest }) => (
     <div className="page-header"><h1>{t('Sécurité')}</h1></div>
 
     <p className="important">
-      {t("Cette page permet de sécuriser l'accès à Recalbox Manager grâce à un identifiant et un mot de passe.")}
+      {t("Cette page permet de sécuriser l'accès à RHGamestation Manager grâce à un identifiant et un mot de passe.")}
     </p>
 
     <StickyAlert bsStyle={stickyStyle} container={stickyContainer}>

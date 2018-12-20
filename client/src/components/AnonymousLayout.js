@@ -32,7 +32,7 @@ const AnonymousLayout = ({ t, i18n, children }) => {
       <Navbar inverse fixedTop fluid collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand>
-            <Link to="/">{t('Recalbox Manager')}</Link>
+            <Link to="/">{t('RH Gamestation Manager')}</Link>
           </Navbar.Brand>
 
           <Nav pullRight>

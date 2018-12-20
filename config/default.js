@@ -1,12 +1,12 @@
 module.exports = {
   auth: {
-    path: `/recalbox/share/system/.config/manager-web/`,
+    path: `/rhgamestation/share/system/.config/manager-web/`,
     file: 'credentials.auth'
   },
 
   smartFile: {
     url: 'https://app.smartfile.com/api/2',
-    folderName: '/recalbox-support',
+    folderName: '/rhgamestation-support',
     api: {
       upload: '/path/data',
       link: '/link/'
@@ -17,32 +17,32 @@ module.exports = {
     }
   },
 
-  recalbox: {
+  rhgamestation: {
     ip: '127.0.0.1',
     udpPort: 1337,
     logsPaths: [
       '/var/log/messages',
-      '/recalbox/share/system/.emulationstation/es_log.txt',
-      '/recalbox/share/system/logs/recalbox.log',
+      '/rhgamestation/share/system/.emulationstation/es_log.txt',
+      '/rhgamestation/share/system/logs/rhgamestation.log',
     ],
-    confPath: '/recalbox/share/system/recalbox.conf',
-    supportScript: '/recalbox/scripts/recalbox-support.sh',
+    confPath: '/rhgamestation/share/system/rhgamestation.conf',
+    supportScript: '/rhgamestation/scripts/rhgamestation-support.sh',
     emulationStationPath: '/etc/init.d/S31emulationstation',
-    configScript: '/recalbox/scripts/recalbox-config.sh',
-    encodeScript: '/recalbox/scripts/recalbox-encode.sh',
+    configScript: '/rhgamestation/scripts/rhgamestation-config.sh',
+    encodeScript: '/rhgamestation/scripts/rhgamestation-encode.sh',
     raspi2png: {
       command: 'raspi2png -p',
-      savePath: '/recalbox/share/screenshots'
+      savePath: '/rhgamestation/share/screenshots'
     },
-    romsPath: '/recalbox/share/roms',
+    romsPath: '/rhgamestation/share/roms',
     romsExcludedFolders: ['downloaded_images'],
-    screenshotsPath: '/recalbox/share/screenshots',
-    biosPath: '/recalbox/share/bios/',
-    biosFilePath: '/recalbox/share_init/bios/readme.txt',
-    esSystemsCfgPath: '/recalbox/share_init/system/.emulationstation/es_systems.cfg',
-    systemSettingsCommand: 'python /usr/lib/python2.7/site-packages/configgen/settings/recalboxSettings.pyc',
-    savesPath: '/recalbox/share/saves',
-    arch: '/recalbox/recalbox.arch',
+    screenshotsPath: '/rhgamestation/share/screenshots',
+    biosPath: '/rhgamestation/share/bios/',
+    biosFilePath: '/rhgamestation/share_init/bios/readme.txt',
+    esSystemsCfgPath: '/rhgamestation/share_init/system/.emulationstation/es_systems.cfg',
+    systemSettingsCommand: 'python /usr/lib/python2.7/site-packages/configgen/settings/rhgamestationSettings.pyc',
+    savesPath: '/rhgamestation/share/saves',
+    arch: '/rhgamestation/rhgamestation.arch',
 
     // Configuration
     configuration: {

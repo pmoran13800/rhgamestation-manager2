@@ -22,12 +22,12 @@ router.post('/', async (req, res, next) => {
         data = fs.writeFileSync(body.file, body.data);
         break;
       case 'deleteBios':
-        const biosPath = path.resolve(config.get('recalbox.biosPath'), body.file);
+        const biosPath = path.resolve(config.get('rhgamestation.biosPath'), body.file);
 
         fs.unlinkSync(biosPath);
         break;
       case 'takeScreenshot':
-        const raspi2png = config.get('recalbox.raspi2png');
+        const raspi2png = config.get('rhgamestation.raspi2png');
         const screenshotName = `screenshot-${new Date().toISOString().replace(/[:\.]/g, '-')}.png`;
         const screenPath = `${raspi2png.savePath}/${screenshotName}`;
 
@@ -38,7 +38,7 @@ router.post('/', async (req, res, next) => {
         data = screenshotName;
         break;
       case 'deleteScreenshot':
-        const screenshotPath = path.resolve(config.get('recalbox.screenshotsPath'), body.file);
+        const screenshotPath = path.resolve(config.get('rhgamestation.screenshotsPath'), body.file);
 
         fs.unlinkSync(screenshotPath);
         break;
@@ -61,7 +61,7 @@ router.post('/', async (req, res, next) => {
             break;
         }
 
-        spawn(config.get('recalbox.emulationStationPath'), [esAction], {
+        spawn(config.get('rhgamestation.emulationStationPath'), [esAction], {
           stdio: 'ignore', // piping all stdio to /dev/null
           detached: true
         }).unref();
@@ -140,7 +140,7 @@ router.post('/', async (req, res, next) => {
           const authConfig = config.get('auth');
           const authFile = `${authConfig.path}${authConfig.file}`;
           const credentials = JSON.parse(fs.readFileSync(authFile).toString());
-          const decodeScript = config.get('recalbox.encodeScript');
+          const decodeScript = config.get('rhgamestation.encodeScript');
           const decodedPassword = execSync(`${decodeScript} decode ${credentials.password}`).toString().trim();
 
           if (
@@ -170,7 +170,7 @@ router.post('/', async (req, res, next) => {
             }
           } else {
             const securityCredentials = { ...securityRest };
-            const encodeScript = config.get('recalbox.encodeScript');
+            const encodeScript = config.get('rhgamestation.encodeScript');
 
             securityCredentials.password = execSync(`${encodeScript} encode ${securityCredentials.password}`).toString().trim();
 
@@ -192,8 +192,8 @@ router.post('/', async (req, res, next) => {
         break;
       case 'launch-rom':
         const { system, file } = body;
-        const host = config.get('recalbox.ip');
-        const port = config.get('recalbox.udpPort');
+        const host = config.get('rhgamestation.ip');
+        const port = config.get('rhgamestation.udpPort');
         const dgram = require('dgram');
         const message = new Buffer(`START|${system}|${file}|`);
         const client = dgram.createSocket('udp4');
@@ -229,7 +229,7 @@ async function deleteRom(payload) {
   // Delete ROM file
   for (let i = 0; i <= payload.files.length; i++) {
     const file = payload.files[i];
-    const romPath = path.resolve(config.get('recalbox.romsPath'), payload.system, file);
+    const romPath = path.resolve(config.get('rhgamestation.romsPath'), payload.system, file);
 
     fs.unlinkSync(romPath);
   }
@@ -260,7 +260,7 @@ async function deleteRom(payload) {
 
     // remove image
     fs.unlinkSync(path.resolve(
-      config.get('recalbox.romsPath'),
+      config.get('rhgamestation.romsPath'),
       payload.system,
       rawGameList.gameList.game[gameIndex].image
     ));

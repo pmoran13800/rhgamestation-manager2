@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import { translate } from 'react-i18next';
 import Loader from 'react-loader';
 import StickyAlert from '../utils/StickyAlert';
-import RecalboxConfForm from '../forms/RecalboxConf';
+import RHGamestationConfForm from '../forms/RHGamestationConf';
 
 let stickyContainer;
 
-const RecalboxConf = ({ t, loaded, stickyStyle, stickyContent, ...rest }) => (
+const RHGamestationConf = ({ t, loaded, stickyStyle, stickyContent, ...rest }) => (
   <div ref={el => stickyContainer = el}>
     <div className="page-header">
-      <h1>recalbox.conf</h1>
+      <h1>rhgamestation.conf</h1>
     </div>
 
     <StickyAlert bsStyle={stickyStyle} container={stickyContainer}>
@@ -19,21 +19,21 @@ const RecalboxConf = ({ t, loaded, stickyStyle, stickyContent, ...rest }) => (
 
     <div className="bs-callout bs-callout-info">
       <p>
-        {t("Si jamais les autres vues ne suffisent pas, le contenu du fichier recalbox.conf peut-être entièrement vu et modifié via cette interface.")}
+        {t("Si jamais les autres vues ne suffisent pas, le contenu du fichier rhgamestation.conf peut-être entièrement vu et modifié via cette interface.")}
       </p>
     </div>
 
     <Loader loaded={loaded}>
-      <RecalboxConfForm {...rest} />
+      <RHGamestationConfForm {...rest} />
     </Loader>
   </div>
 );
 
-RecalboxConf.propTypes = {
+RHGamestationConf.propTypes = {
   t: PropTypes.func.isRequired,
   loaded: PropTypes.bool.isRequired,
   stickyStyle: PropTypes.string,
   stickyContent: PropTypes.string,
 };
 
-export default translate()(RecalboxConf);
+export default translate()(RHGamestationConf);

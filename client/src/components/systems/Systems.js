@@ -12,7 +12,7 @@ const Systems = ({ t, loaded, stickyStyle, stickyContent, ...rest }) => (
     <div className="page-header"><h1>{t('Système')}</h1></div>
 
     <p className="important">
-      {t('Cette page permet de gérer les différents réglages système de recalbox.')}
+      {t('Cette page permet de gérer les différents réglages système de rhgamestation.')}
     </p>
 
     <StickyAlert bsStyle={stickyStyle} container={stickyContainer}>

@@ -12,7 +12,7 @@ const Audio = ({ t, loaded, stickyStyle, stickyContent, ...rest }) => (
     <div className="page-header"><h1>{t('Audio')}</h1></div>
 
     <p className="important">
-      {t('Cette page permet de gérer la partie audio de recalbox.')}
+      {t('Cette page permet de gérer la partie audio de rhgamestation.')}
     </p>
 
     <StickyAlert bsStyle={stickyStyle} container={stickyContainer}>

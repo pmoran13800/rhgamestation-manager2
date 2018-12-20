@@ -15,13 +15,13 @@ const storage = multer.diskStorage({
 
     switch (req.body.type) {
       case 'bios':
-        dir = config.get('recalbox.biosPath');
+        dir = config.get('rhgamestation.biosPath');
         break;
       case 'roms':
-        dir = path.resolve(config.get('recalbox.romsPath'), req.body.system, req.body.path);
+        dir = path.resolve(config.get('rhgamestation.romsPath'), req.body.system, req.body.path);
         break;
       case 'romImage':
-        dir = path.resolve(config.get('recalbox.romsPath'), req.body.system, 'downloaded_images');
+        dir = path.resolve(config.get('rhgamestation.romsPath'), req.body.system, 'downloaded_images');
         break;
     }
 
@@ -48,7 +48,7 @@ router.post('/bios', (req, res, next) => {
     // Everything went fine
     if (req.file && req.file.originalname) {
       try {
-        let data = execSync(`grep -w "${req.file.originalname}" ${config.recalbox.biosFilePath}`);
+        let data = execSync(`grep -w "${req.file.originalname}" ${config.rhgamestation.biosFilePath}`);
         let lineResult = handleBiosLine(data.toString());
 
         if (null !== lineResult) {

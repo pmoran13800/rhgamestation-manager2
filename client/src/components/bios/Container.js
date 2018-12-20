@@ -32,7 +32,7 @@ class BiosContainer extends React.Component {
 
   async componentWillMount() {
     const state = await promisifyData(
-      conf(['recalbox.biosPath']),
+      conf(['rhgamestation.biosPath']),
       get('biosList')
     );
 
@@ -105,7 +105,7 @@ class BiosContainer extends React.Component {
 
     return (
       <div>
-        <Bios {...rest} biosPath={this.state['recalbox.biosPath']}
+        <Bios {...rest} biosPath={this.state['rhgamestation.biosPath']}
           onClick={this.open} onBiosUploaded={this.onBiosUploaded} />
 
         <Modal show={showModal} onHide={this.close}>

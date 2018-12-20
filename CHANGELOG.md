@@ -66,12 +66,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [2.0.0] - 2017-03-19
 ### Added
 - First "production ready" release of the manager. Included by default with
-recalbox 4.1.
+rhgamestation 4.1.
 
-[Unreleased]: https://github.com/DjLeChuck/recalbox-manager/compare/v2.2.2...HEAD
-[2.2.2]: https://github.com/DjLeChuck/recalbox-manager/compare/v2.2.1...v2.2.2
-[2.2.1]: https://github.com/DjLeChuck/recalbox-manager/compare/v2.2.0...v2.2.1
-[2.2.0]: https://github.com/DjLeChuck/recalbox-manager/compare/v2.1.0...v2.2.0
-[2.1.0]: https://github.com/DjLeChuck/recalbox-manager/compare/v2.0.2...v2.1.0
-[2.0.2]: https://github.com/DjLeChuck/recalbox-manager/compare/v2.0.1...v2.0.2
-[2.0.1]: https://github.com/DjLeChuck/recalbox-manager/compare/v2.0.0...v2.0.1
+[Unreleased]: https://github.com/DjLeChuck/rhgamestation-manager/compare/v2.2.2...HEAD
+[2.2.2]: https://github.com/DjLeChuck/rhgamestation-manager/compare/v2.2.1...v2.2.2
+[2.2.1]: https://github.com/DjLeChuck/rhgamestation-manager/compare/v2.2.0...v2.2.1
+[2.2.0]: https://github.com/DjLeChuck/rhgamestation-manager/compare/v2.1.0...v2.2.0
+[2.1.0]: https://github.com/DjLeChuck/rhgamestation-manager/compare/v2.0.2...v2.1.0
+[2.0.2]: https://github.com/DjLeChuck/rhgamestation-manager/compare/v2.0.1...v2.0.2
+[2.0.1]: https://github.com/DjLeChuck/rhgamestation-manager/compare/v2.0.0...v2.0.1

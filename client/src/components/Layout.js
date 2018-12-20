@@ -75,9 +75,9 @@ const Layout = ({ t, i18n, children }) => {
     glyph: 'file',
     label: t('Logs'),
   }, {
-    link: '/recalbox-conf',
+    link: '/rhgamestation-conf',
     glyph: 'file',
-    label: 'recalbox.conf',
+    label: 'rhgamestation.conf',
   }, {
     link: '/help',
     glyph: 'question-sign',
@@ -85,7 +85,7 @@ const Layout = ({ t, i18n, children }) => {
   }];
   let logOutEntry = '';
 
-  if (readCookie('recalbox-session')) {
+  if (readCookie('rhgamestation-session')) {
     logOutEntry = renderMenuEntry({
       link: '/logout',
       glyph: 'log-out',
@@ -112,7 +112,7 @@ const Layout = ({ t, i18n, children }) => {
       <Navbar inverse fixedTop fluid collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand>
-            <Link to="/">{t('Recalbox Manager')}</Link>
+            <Link to="/">{t('RHGamestation Manager')}</Link>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>

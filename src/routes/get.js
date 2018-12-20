@@ -34,8 +34,8 @@ router.get('/', async (req, res, next) => {
         data = req.hostname;
         break;
       case 'directoryListing':
-        const directoryPath = path.join(config.get('recalbox.romsPath'), params.subpath || '');
-        const excluded = config.get('recalbox.romsExcludedFolders');
+        const directoryPath = path.join(config.get('rhgamestation.romsPath'), params.subpath || '');
+        const excluded = config.get('rhgamestation.romsExcludedFolders');
         data = fs.readdirSync(directoryPath).filter((file) => {
           return -1 === excluded.indexOf(file) &&
             fs.statSync(path.join(directoryPath, file)).isDirectory();
@@ -52,7 +52,7 @@ router.get('/', async (req, res, next) => {
         data = fs.readFileSync(params.file).toString();
         break;
       case 'biosList':
-        const contents = fs.readFileSync(config.get('recalbox.biosFilePath'), 'utf8');
+        const contents = fs.readFileSync(config.get('rhgamestation.biosFilePath'), 'utf8');
         data = [];
 
         contents.split("\n").forEach((line) => {
@@ -64,13 +64,13 @@ router.get('/', async (req, res, next) => {
         });
         break;
       case 'screenshotsList':
-        srcpath = config.get('recalbox.screenshotsPath');
+        srcpath = config.get('rhgamestation.screenshotsPath');
         data = fs.readdirSync(srcpath).filter((file) => {
           return fs.statSync(path.join(srcpath, file)).isFile() && '.png' === path.extname(file);
         });
         break;
       case 'canTakeScreenshots':
-        data = 'rpi' === execSync(`cat ${config.get('recalbox.arch')}`).toString().substring(0, 3);
+        data = 'rpi' === execSync(`cat ${config.get('rhgamestation.arch')}`).toString().substring(0, 3);
         break;
       case 'systemFullname':
         const paramSystem = params.system;
@@ -157,7 +157,7 @@ router.get('/', async (req, res, next) => {
         data = osutils.listCPUs();
         break;
       case 'ESStatus':
-        const ESPath = config.get('recalbox.emulationStationPath');
+        const ESPath = config.get('rhgamestation.emulationStationPath');
         const cmd = `${ESPath} status | cut -d ' ' -f 3`;
         data = 'running' === execSync(cmd).toString().trim() ? 'OK' : 'KO';
         break;

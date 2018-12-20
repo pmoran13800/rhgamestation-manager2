@@ -8,7 +8,7 @@ import { getDefaultValues } from './utils';
 import FormActions from './FormActions';
 import SimpleInput from './inputs/Simple';
 
-const RecalboxConfForm = ({ t, saving, onSubmit, defaultValues, confPath }) => (
+const RHGamestationConfForm = ({ t, saving, onSubmit, defaultValues, confPath }) => (
   <Form
     onSubmit={values => onSubmit(values)}
     defaultValues={getDefaultValues(defaultValues)}
@@ -32,7 +32,7 @@ const RecalboxConfForm = ({ t, saving, onSubmit, defaultValues, confPath }) => (
   </Form>
 );
 
-RecalboxConfForm.propTypes = {
+RHGamestationConfForm.propTypes = {
   t: PropTypes.func.isRequired,
   saving: PropTypes.bool.isRequired,
   onSubmit: PropTypes.func.isRequired,
@@ -40,4 +40,4 @@ RecalboxConfForm.propTypes = {
   confPath: PropTypes.string,
 };
 
-export default translate()(RecalboxConfForm);
+export default translate()(RHGamestationConfForm);

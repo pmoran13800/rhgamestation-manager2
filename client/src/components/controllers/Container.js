@@ -23,7 +23,7 @@ class ControllerContainer extends Component {
 
   async componentWillMount() {
     const state = await promisifyData(
-      translatableConf(['recalbox.controllers.ps3drivers']),
+      translatableConf(['rhgamestation.controllers.ps3drivers']),
       grep([
         'controllers.db9.enabled',
         'controllers.db9.args',
@@ -68,7 +68,7 @@ class ControllerContainer extends Component {
   render() {
     return (
       <Controllers {...this.state} onSubmit={this.onSubmit} dataset={{
-        ps3Drivers: this.state['recalbox.controllers.ps3drivers'],
+        ps3Drivers: this.state['rhgamestation.controllers.ps3drivers'],
       }} defaultValues={{
         'controllers.db9.enabled': this.state['controllers.db9.enabled'],
         'controllers.db9.args': this.state['controllers.db9.args'],

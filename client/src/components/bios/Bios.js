@@ -21,7 +21,7 @@ const Bios = ({
       {stickyContent}
     </StickyAlert>
 
-    <p>{t("Voici la liste de l'ensemble des BIOS supportés par recalbox.")}</p>
+    <p>{t("Voici la liste de l'ensemble des BIOS supportés par rhgamestation.")}</p>
     <p>{t("Les fichiers se trouvent dans le répertoire suivant :")} <code>{biosPath}</code></p>
     <p>{t('Grâce à la colonne "Valide" du tableau, vous pouvez voir si les BIOS que vous possédez sont bons ou non.')}</p>
 

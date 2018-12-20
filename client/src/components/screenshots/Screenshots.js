@@ -66,7 +66,7 @@ const Screenshots = ({
 
       {canTakeScreenshots &&
         <Panel header={<h3>{t("Effectuer une capture d'écran")}</h3>}>
-          <p>{t("Le bouton ci-dessous vous permet de prendre une capture d'écran de l'affichage actuel de recalbox.")}</p>
+          <p>{t("Le bouton ci-dessous vous permet de prendre une capture d'écran de l'affichage actuel de rhgamestation.")}</p>
           <p>{screenshotsPathStr}</p>
 
           <p>

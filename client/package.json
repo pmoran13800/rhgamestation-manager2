@@ -1,7 +1,6 @@
 {
-  "name": "client",
-  "version": "0.1.0",
-  "private": true,
+  "name": "rhclient",
+  "version": "0.1.7",
   "proxy": "http://localhost:3001/",
   "devDependencies": {
     "babel-eslint": "^7.1.1",

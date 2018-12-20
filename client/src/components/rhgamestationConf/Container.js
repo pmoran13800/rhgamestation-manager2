@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { translate } from 'react-i18next';
 import { conf, post, get } from '../../api';
-import RecalboxConf from './RecalboxConf';
+import RHGamestationConf from './RHGamestationConf';
 
-class RecalboxConfContainer extends Component {
+class RHGamestationConfContainer extends Component {
   static propTypes = {
     t: PropTypes.func.isRequired,
   };
@@ -22,10 +22,10 @@ class RecalboxConfContainer extends Component {
 
   async componentDidMount() {
     try {
-      const confData = await conf(['recalbox.confPath']);
+      const confData = await conf(['rhgamestation.confPath']);
       const readData = await get(
         'readFile',
-        `file=${confData['recalbox.confPath']}`
+        `file=${confData['rhgamestation.confPath']}`
       );
 
       this.setState({
@@ -48,7 +48,7 @@ class RecalboxConfContainer extends Component {
     this.setState({ saving: true });
 
     post('writeFile', {
-      file: this.state['recalbox.confPath'],
+      file: this.state['rhgamestation.confPath'],
       data: content,
     }).then(() => {
       this.setState({
@@ -67,11 +67,11 @@ class RecalboxConfContainer extends Component {
 
   render() {
     return (
-      <RecalboxConf {...this.state} onSubmit={this.onSubmit} defaultValues={{
+      <RHGamestationConf {...this.state} onSubmit={this.onSubmit} defaultValues={{
         'content': this.state['readFile'],
-      }} confPath={this.state['recalbox.confPath']} />
+      }} confPath={this.state['rhgamestation.confPath']} />
     );
   }
 }
 
-export default translate()(RecalboxConfContainer);
+export default translate()(RHGamestationConfContainer);

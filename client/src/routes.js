@@ -11,7 +11,7 @@ import Controllers from './components/controllers/Container';
 import Help from './components/help/Container';
 import Logs from './components/logs/Container';
 import Monitoring from './components/monitoring/Container';
-import RecalboxConf from './components/recalboxConf/Container';
+import RHGamestationConf from './components/rhgamestationConf/Container';
 import RomsList from './components/roms/list/Container';
 import RomsView from './components/roms/view/Container';
 import Screenshots from './components/screenshots/Container';
@@ -56,7 +56,7 @@ const routes = (
       <Route path="help" component={Help} />
       <Route path="logs" component={Logs} />
       <Route path="monitoring" component={Monitoring} />
-      <Route path="recalbox-conf" component={RecalboxConf} />
+      <Route path="rhgamestation-conf" component={RHGamestationConf} />
       <Route path="roms">
         <IndexRoute component={RomsList} />
         <Route path=":system" component={RomsView}>

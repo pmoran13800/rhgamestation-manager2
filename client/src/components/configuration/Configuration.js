@@ -12,7 +12,7 @@ const Configuration = ({ t, loaded, stickyStyle, stickyContent, ...rest }) => (
     <div className="page-header"><h1>{t('Configuration')}</h1></div>
 
     <p className="important">
-      {t('Cette page permet de gérer différentes configurations de recalbox tel que les paramètres Wi-Fi, la timezone, la locale, etc.')}
+      {t('Cette page permet de gérer différentes configurations de rhgamestation tel que les paramètres Wi-Fi, la timezone, la locale, etc.')}
     </p>
 
     <StickyAlert bsStyle={stickyStyle} container={stickyContainer}>

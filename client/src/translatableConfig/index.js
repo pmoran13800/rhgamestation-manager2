@@ -1,6 +1,6 @@
 function translatableConfig(i18n) {
   return {
-    recalbox: {
+    rhgamestation: {
       // Audio
       audio: {
         devices: [

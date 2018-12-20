@@ -1,7 +1,6 @@
 {
-  "name": "recalbox-manager",
-  "version": "2.2.2",
-  "private": true,
+  "name": "rhgamestation-manager",
+  "version": "2.0.6",
   "dependencies": {
     "babel-polyfill": "^6.22.0",
     "body-parser": "^1.16.0",

@@ -18,7 +18,7 @@ export function uniqueID() {
 
 // Traitement d'une ligne du fichier readme.txt des BIOS
 const md5Rule = /^[a-f0-9]{32}$/i;
-const biosPath = config.get('recalbox.biosPath');
+const biosPath = config.get('rhgamestation.biosPath');
 
 export function handleBiosLine(line) {
   let parts = line.split(' ');
@@ -43,7 +43,7 @@ export function handleBiosLine(line) {
 
 // Traitement des ROMs
 export async function getRoms(system, subpath = '') {
-  const srcpath = path.join(config.get('recalbox.romsPath'), system, subpath);
+  const srcpath = path.join(config.get('rhgamestation.romsPath'), system, subpath);
   const esSystems = await getEsSystems();
   const systemData = esSystems.find(s => s.name === system);
   const romExtensions = systemData ? systemData.extensions : [];
@@ -82,7 +82,7 @@ export async function getEsSystems() {
     return esSystems;
   }
 
-  const json = await xmlToJson(config.get('recalbox.esSystemsCfgPath'));
+  const json = await xmlToJson(config.get('rhgamestation.esSystemsCfgPath'));
   esSystems = [];
 
   json.systemList.system.forEach((system) => {
@@ -108,7 +108,7 @@ export function parseGameReleaseDate(releaseDate) {
 }
 
 export function getSystemRomsBasePath(system) {
-  return path.join(config.get('recalbox.romsPath'), system);
+  return path.join(config.get('rhgamestation.romsPath'), system);
 }
 
 export function getSystemGamelistPath(system) {

@@ -23,7 +23,7 @@ class AudioContainer extends Component {
 
   async componentWillMount() {
     const state = await promisifyData(
-      translatableConf(['recalbox.audio.devices']),
+      translatableConf(['rhgamestation.audio.devices']),
       grep(['audio.device', 'audio.volume', 'audio.bgmusic'])
     );
 
@@ -59,7 +59,7 @@ class AudioContainer extends Component {
   render() {
     return (
       <Audio {...this.state} onSubmit={this.onSubmit} dataset={{
-        audioDevices: this.state['recalbox.audio.devices'],
+        audioDevices: this.state['rhgamestation.audio.devices'],
       }} defaultValues={{
         'audio.bgmusic': this.state['audio.bgmusic'],
         'audio.volume': this.state['audio.volume'],

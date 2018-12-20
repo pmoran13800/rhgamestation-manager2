@@ -46,7 +46,7 @@ const ConfigurationForm = ({ t, saving, onSubmit, defaultValues, dataset }) => (
 
           <Well>
             <Alert bsStyle="warning">
-              {t('Attention, si vous vous trompez dans vos informations vous risquez de ne plus pouvoir accéder à votre recalbox par le wifi.')}
+              {t('Attention, si vous vous trompez dans vos informations vous risquez de ne plus pouvoir accéder à votre rhgamestation par le wifi.')}
               <br />
               {t("Les clés sont cryptées et ne sont donc pas réaffichées dans les champs. Cela ne veut pas dire que la valeur n'est pas renseignée !")}
               <br />
@@ -184,8 +184,8 @@ const ConfigurationForm = ({ t, saving, onSubmit, defaultValues, dataset }) => (
         <Panel title={<h3>{t('API')}</h3>}>
           <SwitchInput id="system-api-enabled"
             field="system.api.enabled"
-            label={t("Activer l'option de recalbox qui permet d'interagir avec via une API REST")}
-            warning={t('Cette modification nécessite de redémarrer votre recalbox pour être prise en compte.')}
+            label={t("Activer l'option de rhgamestation qui permet d'interagir avec via une API REST")}
+            warning={t('Cette modification nécessite de redémarrer votre rhgamestation pour être prise en compte.')}
           />
         </Panel>
 

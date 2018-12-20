@@ -23,12 +23,12 @@ router.post('/', (req, res, next) => {
     }
 
     for (const key in values) {
-      execSync(`${config.get('recalbox.systemSettingsCommand')} -command save -key ${key} -value '${values[key]}'`);
+      execSync(`${config.get('rhgamestation.systemSettingsCommand')} -command save -key ${key} -value '${values[key]}'`);
     }
 
     if (undefined !== values['audio.volume'] && 'production' === req.app.get('env')) {
       // Set volume
-      exec(`${config.get('recalbox.configScript')} volume ${values['audio.volume']}`, (error) => {
+      exec(`${config.get('rhgamestation.configScript')} volume ${values['audio.volume']}`, (error) => {
         if (error) {
           console.error(`exec error: ${error}`);
         }

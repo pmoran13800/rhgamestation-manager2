@@ -22,7 +22,7 @@ class LogsContainer extends Component {
 
   async componentWillMount() {
     const state = await promisifyData(
-      conf(['recalbox.logsPaths'])
+      conf(['rhgamestation.logsPaths'])
     );
 
     state.loaded = true;
@@ -59,7 +59,7 @@ class LogsContainer extends Component {
   render() {
     return (
       <Logs {...this.state} onSubmit={this.onSubmit}
-        dataset={{ logsPaths: this.state['recalbox.logsPaths'] }}/>
+        dataset={{ logsPaths: this.state['rhgamestation.logsPaths'] }}/>
     );
   }
 }

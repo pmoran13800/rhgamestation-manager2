@@ -25,13 +25,13 @@ class ConfigurationContainer extends Component {
     const state = await promisifyData(
       get('directoryListing', 'addFavorites=1'),
       conf([
-        'recalbox.configuration.keyboardlayouts',
-        'recalbox.configuration.systemlocales',
-        'recalbox.configuration.timezones',
-        'recalbox.configuration.esMenus',
-        'recalbox.configuration.emulatorsSpecialkeys',
+        'rhgamestation.configuration.keyboardlayouts',
+        'rhgamestation.configuration.systemlocales',
+        'rhgamestation.configuration.timezones',
+        'rhgamestation.configuration.esMenus',
+        'rhgamestation.configuration.emulatorsSpecialkeys',
       ]),
-      translatableConf(['recalbox.configuration.updatesTypes']),
+      translatableConf(['rhgamestation.configuration.updatesTypes']),
       grep([
         'system.language',
         'system.kblayout',
@@ -95,12 +95,12 @@ class ConfigurationContainer extends Component {
 
     return (
       <Configuration {...this.state} onSubmit={this.onSubmit} dataset={{
-        systemLocales: this.state['recalbox.configuration.systemlocales'],
-        keyboardLayouts: this.state['recalbox.configuration.keyboardlayouts'],
-        timezones: this.state['recalbox.configuration.timezones'],
-        esMenus: this.state['recalbox.configuration.esMenus'],
-        specialKeys: this.state['recalbox.configuration.emulatorsSpecialkeys'],
-        updatesTypes: this.state['recalbox.configuration.updatesTypes'],
+        systemLocales: this.state['rhgamestation.configuration.systemlocales'],
+        keyboardLayouts: this.state['rhgamestation.configuration.keyboardlayouts'],
+        timezones: this.state['rhgamestation.configuration.timezones'],
+        esMenus: this.state['rhgamestation.configuration.esMenus'],
+        specialKeys: this.state['rhgamestation.configuration.emulatorsSpecialkeys'],
+        updatesTypes: this.state['rhgamestation.configuration.updatesTypes'],
         directoryListing,
       }} defaultValues={{
         'system.language': this.state['system.language'],

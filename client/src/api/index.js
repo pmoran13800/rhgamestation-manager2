@@ -94,7 +94,7 @@ export function post(action, body = {}) {
 }
 
 /**
- * grep values from recalbox.conf
+ * grep values from rhgamestation.conf
  */
 export function grep(keys) {
   return fetch(`/grep?keys=${keys.join('|')}`, { credentials: 'include' })
@@ -132,7 +132,7 @@ export function translatableConf(keys) {
 }
 
 /**
- * save values to recalbox.conf
+ * save values to rhgamestation.conf
  */
 export function save(values) {
   return fetch('/save', {
@@ -145,8 +145,8 @@ export function save(values) {
     .then(parseJSON);
 }
 
-export function recalboxSupport() {
-  return fetch('/recalbox-support', { credentials: 'include' })
+export function rhgamestationSupport() {
+  return fetch('/rhgamestation-support', { credentials: 'include' })
     .then(checkStatus)
     .then(parseJSON);
 }

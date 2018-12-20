@@ -27,7 +27,7 @@ class ScreenshotsContainer extends Component {
 
   async componentWillMount() {
     const state = await promisifyData(
-      conf(['recalbox.screenshotsPath']),
+      conf(['rhgamestation.screenshotsPath']),
       get('hostname'),
       get('screenshotsList'),
       get('canTakeScreenshots')
@@ -109,7 +109,7 @@ class ScreenshotsContainer extends Component {
     return (
       <div>
         <Screenshots {...rest} onDelete={this.askBeforeDeleteScreenshot}
-          screenshotsPath={this.state['recalbox.screenshotsPath']}
+          screenshotsPath={this.state['rhgamestation.screenshotsPath']}
           screenshotOnSuccess={data => this.screenshotAction(true, data)}
           screenshotOnError={err => this.screenshotAction(false, err)} />
 

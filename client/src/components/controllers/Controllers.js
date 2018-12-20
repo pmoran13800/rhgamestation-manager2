@@ -12,7 +12,7 @@ const Controller = ({ t, loaded, stickyStyle, stickyContent, ...rest }) => (
     <div className="page-header"><h1>{t('Contrôleurs')}</h1></div>
 
     <p className="important">
-      {t('Cette page permet de gérer les différents contrôleurs supportés par de recalbox.')}
+      {t('Cette page permet de gérer les différents contrôleurs supportés par de rhgamestation.')}
     </p>
 
     <StickyAlert bsStyle={stickyStyle} container={stickyContainer}>

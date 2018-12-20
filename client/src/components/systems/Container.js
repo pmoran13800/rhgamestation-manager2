@@ -23,7 +23,7 @@ class SystemContainer extends Component {
 
   async componentWillMount() {
     const state = await promisifyData(
-      translatableConf(['recalbox.systems.ratio', 'recalbox.systems.shaderset']),
+      translatableConf(['rhgamestation.systems.ratio', 'rhgamestation.systems.shaderset']),
       grep([
         'global.ratio',
         'global.shaderset',
@@ -70,8 +70,8 @@ class SystemContainer extends Component {
   render() {
     return (
       <Systems {...this.state} onSubmit={this.onSubmit} dataset={{
-        ratioList: this.state['recalbox.systems.ratio'],
-        shadersets: this.state['recalbox.systems.shaderset'],
+        ratioList: this.state['rhgamestation.systems.ratio'],
+        shadersets: this.state['rhgamestation.systems.shaderset'],
       }} defaultValues={{
         'global.ratio': this.state['global.ratio'],
         'global.shaderset': this.state['global.shaderset'],

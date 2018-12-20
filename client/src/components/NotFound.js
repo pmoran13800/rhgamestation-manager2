@@ -9,7 +9,7 @@ const NotFound = ({ t }) => (
     <h1>404</h1>
     <h2>{t('Page introuvable !')}</h2>
 
-    <img src={logo} alt="Recalbox" />
+    <img src={logo} alt="RHGamestation" />
 
     <p>
       <Link to="/">{t("Retour à la page d'accueil")}</Link>

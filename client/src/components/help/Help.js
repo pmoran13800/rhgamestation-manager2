@@ -42,7 +42,7 @@ const Help = ({
 
     <br />
 
-    <Panel header={<h3>{t("Exécution de recalbox-support.sh")}</h3>}>
+    <Panel header={<h3>{t("Exécution de rhgamestation-support.sh")}</h3>}>
       <p>{supportSentence}</p>
       <p>{t("Vous obtiendrez alors un lien de téléchargement qu'il vous suffira de copier / coller sur le forum.")}</p>
 

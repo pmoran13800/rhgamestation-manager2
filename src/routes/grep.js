@@ -7,7 +7,7 @@ const router = express.Router(); // eslint-disable-line babel/new-cap
 router.get('/', (req, res, next) => {
   try {
     const keys = req.query.keys.replace(/\./g, '\\.');
-    let data = execSync(`egrep -w "${keys}" ${config.get('recalbox.confPath')}`);
+    let data = execSync(`egrep -w "${keys}" ${config.get('rhgamestation.confPath')}`);
     data = data.toString().trim().split('\n');
     let result = {};
 

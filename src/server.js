@@ -20,7 +20,7 @@ const app = express();
 app.set('port', (process.env.PORT || 3001));
 
 app.use(cookieSession({
-  name: 'recalbox-session',
+  name: 'rhgamestation-session',
   secret: 't|-|eC4keIsA|_i3',
   httpOnly: false,
   secure: false,
@@ -33,10 +33,10 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // serves screenshots
-app.use('/viewer/screenshots', express.static(config.get('recalbox.screenshotsPath')));
+app.use('/viewer/screenshots', express.static(config.get('rhgamestation.screenshotsPath')));
 
 // serves roms (form images)
-app.use('/viewer/roms', express.static(config.get('recalbox.romsPath')));
+app.use('/viewer/roms', express.static(config.get('rhgamestation.romsPath')));
 
 // locales
 app.use('/locales', express.static('locales'));
@@ -54,22 +54,22 @@ app.use('/post', postRouter);
 // Récupération de valeurs du fichier de config du manager
 app.use('/conf', confRouter);
 
-// Récupération de valeurs du fichier recalbox.conf
+// Récupération de valeurs du fichier rhgamestation.conf
 app.use('/grep', grepRouter);
 
-// Enregistrement de nouvelles valeurs dans le fichier recalbox.conf
+// Enregistrement de nouvelles valeurs dans le fichier rhgamestation.conf
 app.use('/save', saveRouter);
 
 // Prise en charge des différents uploads (BIOS, ROMs)
 app.use('/upload', uploadRouter);
 
-app.get('/recalbox-support', (req, res, next) => {
+app.get('/rhgamestation-support', (req, res, next) => {
   try {
-    const archivePath = `${config.get('recalbox.savesPath')}/recalbox-support-${uniqueID()}.tar.gz`;
+    const archivePath = `${config.get('rhgamestation.savesPath')}/rhgamestation-support-${uniqueID()}.tar.gz`;
     const smartFile = config.get('smartFile');
 
     // Création de l'archive
-    execSync(`${config.get('recalbox.supportScript')} ${archivePath}`);
+    execSync(`${config.get('rhgamestation.supportScript')} ${archivePath}`);
 
     // Upload file
     request
